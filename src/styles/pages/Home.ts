@@ -13,7 +13,7 @@ export const Container = styled.section`
 
 export const HomeAsideLeft = styled.aside``
 
-export const Separetor = styled.div<{ thin: boolean; bgColor?: string }>`
+export const Separetor = styled.div<{ thin?: boolean; bgColor?: string }>`
   display: block;
   width: 100%;
   height: 0.1rem;
