@@ -9,7 +9,10 @@ const theme = {
     tertiary: '#3A3B3C'
   },
   contemplary: {
-    primary: '#DFFC'
+    primary: '  #2b3a41',
+    secondary: '#005555',
+    tertiary: '#007777',
+    fourth: '#bfc4dc'
   }
 }
 

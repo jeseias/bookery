@@ -18,8 +18,9 @@ class App extends NextApp {
 
     return (
       <ThemeProvider theme={theme}>
-        <Header />
-        <Component {...pageProps} />
+        <Component {...pageProps}>
+          <Header />
+        </Component>
         <GlobalStyles />
       </ThemeProvider>
     )
