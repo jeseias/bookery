@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import {
   BottomText,
   Button,
@@ -10,10 +9,9 @@ import {
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('')
-  const dispatch = useDispatch()
 
   function handleLoginInUser() {
-    dispatch({ type: 'USER_FETCH_REQUESTED', payload: { login: username } })
+    //
   }
 
   return (

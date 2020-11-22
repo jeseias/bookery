@@ -1,30 +1,17 @@
-import NextApp from 'next/app'
-
 import { ThemeProvider } from 'styled-components'
-
-import { wrapper } from '../redux/store'
-
-import { useSelector } from 'react-redux'
-import { IAppState } from '../redux/store.types'
-import { useRouter } from 'next/router'
 
 import GlobalStyles from '../styles/global'
 import theme from '../styles/theme'
-import { Header } from '../styles/components/Header'
+import Header from '../components/Header'
 
-class App extends NextApp {
-  render() {
-    const { Component, pageProps } = this.props
-
-    return (
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps}>
-          <Header />
-        </Component>
-        <GlobalStyles />
-      </ThemeProvider>
-    )
-  }
+function App({ Component, pageProps }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <Header />
+      <Component {...pageProps} />
+      <GlobalStyles />
+    </ThemeProvider>
+  )
 }
 
-export default wrapper.withRedux(App)
+export default App
