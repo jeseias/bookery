@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyles from '../styles/global'
 import theme from '../styles/theme'
 import Header from '../components/Header'
+import { wrapper } from '../redux/store'
 
 function App({ Component, pageProps }) {
   return (
@@ -14,4 +15,4 @@ function App({ Component, pageProps }) {
   )
 }
 
-export default App
+export default wrapper.withRedux(App)
