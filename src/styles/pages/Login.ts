@@ -9,6 +9,21 @@ export const Container = styled.div`
   background: ${props => props.theme.backgrounds.secondary};
   box-shadow: 0 0 0.5rem 0.3rem rgba(255, 255, 255, 0.09);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+`
+
+export const LoadingContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 11, 11, 0.3);
+  backdrop-filter: blur(10px);
+
+  z-index: 100;
 `
 
 export const LogoText = styled.div`

@@ -34,6 +34,7 @@
     "react/react-in-jsx-scope": "off",
     "camelcase": "off",
     "default-param-last": "off",
-    "generator-star-spacing": "off"
+    "generator-star-spacing": "off",
+    "multiline-ternary": "off"
 	}
 }

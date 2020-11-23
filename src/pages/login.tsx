@@ -1,18 +1,25 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+
 import {
   BottomText,
   Button,
   Container,
   Input,
-  LogoText
+  LogoText,
+  LoadingContainer
 } from '.././styles/pages/Login'
+
 import UserActionTypes from '../redux/auth/auth.enums'
+import { IStoreState } from '../redux/store.types'
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('')
 
   const dispatch = useDispatch()
+  const { loading } = useSelector((state: IStoreState) => state.auth)
 
   function handleLoginInUser() {
     dispatch({
@@ -23,13 +30,25 @@ const LoginPage: React.FC = () => {
 
   return (
     <Container>
+      {loading ? (
+        <LoadingContainer>
+          <SkeletonTheme color="#202020" highlightColor="#333">
+            <Skeleton
+              circle={true}
+              width={90}
+              height={90}
+              style={{ display: 'block', margin: '22% auto 1rem auto' }}
+            />
+            <Skeleton width="10rem" />
+          </SkeletonTheme>
+        </LoadingContainer>
+      ) : (
+        <h1></h1>
+      )}
       <LogoText>
         <div>B</div>
         <p>Bookery</p>
       </LogoText>
-      {/* <InfoText>
-        Welcome to <b>Bookery</b> , read all books you want
-      </InfoText> */}
       <Input
         type="text"
         placeholder="Github Username"
