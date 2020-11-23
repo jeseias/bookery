@@ -29,10 +29,6 @@ import { NextPage } from 'next'
 
 import CTAsideItem from '../components/CTAsideItem'
 import PostActionButton from '../components/PostActionButton'
-import { useRouter } from 'next/router'
-import { useSelector } from 'react-redux'
-import { IStoreState } from '../redux/store.types'
-import { useEffect } from 'react'
 
 const Home: NextPage = () => {
   return (

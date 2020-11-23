@@ -13,6 +13,9 @@ const theme = {
     secondary: '#005555',
     tertiary: '#007777',
     fourth: '#bfc4dc'
+  },
+  cool: {
+    top: '#3271ac'
   }
 }
 
