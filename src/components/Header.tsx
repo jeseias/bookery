@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux'
 import { IStoreState } from '../redux/store.types'
 
 const HeaderComponent: React.FC = () => {
-  const { isHeaderVisible } = useSelector((state: IStoreState) => state.auth)
+  const { isHeaderVisible, user } = useSelector(
+    (state: IStoreState) => state.auth
+  )
 
   return (
     <Header visible={isHeaderVisible}>
@@ -16,7 +18,12 @@ const HeaderComponent: React.FC = () => {
       </SearchBox>
 
       <InfoBox>
-        <p>10 books</p>
+        {user ? (
+          <>
+            <img src={user.avatar_url} />
+            <span>{user.name.split(' ')[0]}</span>
+          </>
+        ) : null}
       </InfoBox>
     </Header>
   )

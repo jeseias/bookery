@@ -8,6 +8,7 @@ const PageCtrl: React.FC = () => {
   const { isSignIn } = useSelector((state: IStoreState) => state.auth)
 
   useEffect(() => {
+    console.log(isSignIn)
     if (!isSignIn) {
       router.push('/login')
     } else {

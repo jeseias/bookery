@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
@@ -14,12 +14,14 @@ import {
 
 import UserActionTypes from '../redux/auth/auth.enums'
 import { IStoreState } from '../redux/store.types'
+import { useRouter } from 'next/router'
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('')
 
   const dispatch = useDispatch()
-  const { loading } = useSelector((state: IStoreState) => state.auth)
+  const { loading, isSignIn } = useSelector((state: IStoreState) => state.auth)
+  const router = useRouter()
 
   function handleLoginInUser() {
     dispatch({
@@ -27,6 +29,12 @@ const LoginPage: React.FC = () => {
       payload: { login: username }
     })
   }
+
+  useEffect(() => {
+    if (isSignIn) {
+      router.push('/')
+    }
+  }, [isSignIn])
 
   return (
     <Container>

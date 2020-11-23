@@ -49,8 +49,17 @@ export const SearchBox = styled.div`
 `
 
 export const InfoBox = styled.div`
-  display: block;
+  display: flex;
+  align-items: center;
 
   font-size: 2rem;
   font-family: sans-serif;
+
+  img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-right: 1rem;
+  }
 `

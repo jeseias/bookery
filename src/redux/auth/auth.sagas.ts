@@ -1,4 +1,4 @@
-import { call, takeLatest, all, put, takeEvery } from 'redux-saga/effects'
+import { call, takeLatest, put } from 'redux-saga/effects'
 import { ActionType } from 'typesafe-actions'
 import * as AuthActions from './auth.actions'
 import api from '../../services/api'
@@ -12,6 +12,7 @@ export function* signIn({
     const { login } = payload
 
     const { data }: { data: IUser } = yield call(api.get, `/${login}`)
+
     const user = {
       name: data.name,
       email: data.email,
@@ -20,8 +21,6 @@ export function* signIn({
       html_url: data.html_url,
       twitter_username: data.twitter_username
     }
-
-    console.log(user)
 
     yield put({ type: UserActionTypes.SIGN_IN_SUCCESS, payload: { user } })
   } catch (error) {}
