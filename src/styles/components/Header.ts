@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-export const Header = styled.header`
+export const Header = styled.header<{ visible: boolean }>`
   background: ${props => props.theme.backgrounds.secondary};
   border-bottom: 1px solid ${props => props.theme.backgrounds.tertiary};
   color: ${props => props.theme.colors.primary};
   padding: 0 4rem;
   height: 5.5rem;
 
-  display: flex;
+  display: ${props => (props.visible ? 'flex' : 'none')};
   justify-content: space-between;
   align-items: center;
 `

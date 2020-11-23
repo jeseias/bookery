@@ -6,13 +6,8 @@ const INITIAL_STATE: IAuthStateStore = {
   error: false,
   isSignIn: false,
   loading: false,
-  user: {
-    avatar_url: '',
-    bio: '',
-    email: '',
-    html_url: '',
-    name: ''
-  }
+  isHeaderVisible: false,
+  user: null
 }
 
 function authReducer(
@@ -29,13 +24,15 @@ function authReducer(
       return {
         ...state,
         loading: false,
-        isSignIn: true
+        isSignIn: true,
+        isHeaderVisible: true
       }
     case UserActionTypes.SIGN_IN_FAILURE:
       return {
         ...state,
         loading: false,
-        isSignIn: true
+        isSignIn: true,
+        isHeaderVisible: false
       }
     case UserActionTypes.SIGN_OUT_REQUEST:
       return {
@@ -43,7 +40,8 @@ function authReducer(
         user: null,
         loading: false,
         error: false,
-        isSignIn: false
+        isSignIn: false,
+        isHeaderVisible: false
       }
     default:
       return state

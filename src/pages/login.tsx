@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import {
   BottomText,
   Button,
@@ -6,12 +7,18 @@ import {
   Input,
   LogoText
 } from '.././styles/pages/Login'
+import UserActionTypes from '../redux/auth/auth.enums'
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('')
 
+  const dispatch = useDispatch()
+
   function handleLoginInUser() {
-    //
+    dispatch({
+      type: UserActionTypes.SIGN_IN_REQUEST,
+      payload: { login: username }
+    })
   }
 
   return (

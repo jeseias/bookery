@@ -12,6 +12,7 @@ export interface IAuthStateStore {
   readonly loading: boolean
   readonly isSignIn: boolean
   readonly error: boolean
+  readonly isHeaderVisible: boolean
 
   user: {
     readonly avatar_url: string | null
