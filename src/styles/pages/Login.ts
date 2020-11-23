@@ -58,6 +58,7 @@ export const Input = styled.input`
   display: block;
   border-radius: 1rem;
   text-align: center;
+  outline: none;
 `
 
 export const InfoText = styled.p`

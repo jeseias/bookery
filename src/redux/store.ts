@@ -6,6 +6,7 @@ import rootReducer from './root-reducer'
 import { IStoreState, TStoreAction } from './store.types'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './root-saga'
+// import authSaga from './auth/auth.sagas'
 
 export const makeStore: MakeStore<IStoreState, TStoreAction> = () => {
   const sagaMiddleware = createSagaMiddleware()

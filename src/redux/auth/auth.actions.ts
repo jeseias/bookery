@@ -1,12 +1,12 @@
 import { action } from 'typesafe-actions'
 import UserActionTypes from './auth.enums'
-import { IAuthSignInData } from './auth.types'
+import { IAuthSignInData, IUser } from './auth.types'
 
 export const signInRequest = ({ login }: IAuthSignInData) =>
   action(UserActionTypes.SIGN_IN_REQUEST, { login })
 
-export const signInSuccess = ({ login }: IAuthSignInData) =>
-  action(UserActionTypes.SIGN_IN_SUCCESS, { login })
+export const signInSuccess = (user: IUser) =>
+  action(UserActionTypes.SIGN_IN_SUCCESS, { user })
 
 export const signInFailure = () => action(UserActionTypes.SIGN_IN_FAILURE)
 

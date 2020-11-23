@@ -7,6 +7,15 @@ export interface IAuthSignInData {
   login: string
 }
 
+export interface IUser {
+  readonly avatar_url: string | null
+  readonly html_url: string
+  readonly name: string
+  readonly email: string | null
+  readonly bio: string | null
+  readonly twitter_username: string | null
+}
+
 export interface IAuthStateStore {
   readonly login: string
   readonly loading: boolean
@@ -14,11 +23,5 @@ export interface IAuthStateStore {
   readonly error: boolean
   readonly isHeaderVisible: boolean
 
-  user: {
-    readonly avatar_url: string | null
-    readonly html_url: string
-    readonly name: string
-    readonly email: string | null
-    readonly bio: string | null
-  } | null
+  user: IUser | null
 }

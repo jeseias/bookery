@@ -10,8 +10,10 @@ const PageCtrl: React.FC = () => {
   useEffect(() => {
     if (!isSignIn) {
       router.push('/login')
+    } else {
+      router.push('/home')
     }
-  }, [])
+  }, [isSignIn])
   return <></>
 }
 
