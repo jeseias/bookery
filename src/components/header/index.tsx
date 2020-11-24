@@ -10,11 +10,13 @@ import { useSelector } from 'react-redux'
 import { IStoreState } from '../../redux/store.types'
 import NavItem from './NavItem'
 import { FiBook } from 'react-icons/fi'
+import { INavItem } from '../../redux/nav/nav.types'
 
 const HeaderComponent: React.FC = () => {
-  const { isHeaderVisible, user } = useSelector(
-    (state: IStoreState) => state.auth
-  )
+  const {
+    auth: { isHeaderVisible, user },
+    nav
+  } = useSelector((state: IStoreState) => state)
 
   return (
     <Header visible={isHeaderVisible}>
@@ -26,12 +28,15 @@ const HeaderComponent: React.FC = () => {
         </SearchBox>
       </Left>
 
-      <Center>
-        <NavItem Icon={FaHome} text="Home" active={true} />
-        <NavItem Icon={FaUsers} text="Users" active={false} />
-        <NavItem Icon={FiBook} text="Users" active={false} />
-        <NavItem Icon={FaHome} text="Posts" active={false} />
-        <NavItem Icon={FaHome} text="Posts" active={false} />
+      <Center length={Object.values(nav).length}>
+        {Object.values(nav).map((item: INavItem) => (
+          <NavItem
+            key={item.text}
+            Icon={item.Icon}
+            text={item.text}
+            active={item.active}
+          />
+        ))}
       </Center>
 
       <InfoBox>

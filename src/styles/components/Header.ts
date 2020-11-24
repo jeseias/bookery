@@ -50,14 +50,14 @@ export const SearchBox = styled.div`
   }
 `
 
-export const Center = styled.div`
+export const Center = styled.div<{ length: number }>`
   height: 80%;
   margin: auto 0;
 
   display: grid;
   grid-gap: 1rem;
   justify-content: space-between;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: ${props => `repeat(${props.length},1fr)`};
 `
 
 export const Left = styled.div`
