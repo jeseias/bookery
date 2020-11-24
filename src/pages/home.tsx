@@ -77,9 +77,7 @@ const Home: NextPage = () => {
           ) : (
             <>
               <img src="nom" alt="User imagen " />
-              <textarea
-                placeholder={`${user.name || ''}, O que tens em mente?`}
-              ></textarea>
+              <textarea placeholder={' O que tens em mente?'}></textarea>
             </>
           )}
 
