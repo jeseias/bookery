@@ -1,4 +1,4 @@
-import UserActionTypes from './auth.enums'
+import AuthActionTypes from './auth.enums'
 import { IAuthStateStore, TAuthAction } from './auth.types'
 
 const INITIAL_STATE: IAuthStateStore = {
@@ -15,12 +15,12 @@ function authReducer(
   action: TAuthAction
 ): IAuthStateStore {
   switch (action.type) {
-    case UserActionTypes.SIGN_IN_REQUEST:
+    case AuthActionTypes.SIGN_IN_REQUEST:
       return {
         ...state,
         loading: true
       }
-    case UserActionTypes.SIGN_IN_SUCCESS:
+    case AuthActionTypes.SIGN_IN_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -28,14 +28,14 @@ function authReducer(
         isHeaderVisible: true,
         user: action.payload.user
       }
-    case UserActionTypes.SIGN_IN_FAILURE:
+    case AuthActionTypes.SIGN_IN_FAILURE:
       return {
         ...state,
         loading: false,
         isSignIn: true,
         isHeaderVisible: false
       }
-    case UserActionTypes.SIGN_OUT_REQUEST:
+    case AuthActionTypes.SIGN_OUT_REQUEST:
       return {
         ...state,
         user: null,

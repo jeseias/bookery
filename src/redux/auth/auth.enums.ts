@@ -1,8 +1,8 @@
-enum UserActionTypes {
+enum AuthActionTypes {
   SIGN_IN_REQUEST = 'SIGN_IN_REQUEST',
   SIGN_IN_SUCCESS = 'SIGN_IN_SUCCESS',
   SIGN_IN_FAILURE = 'SIGN_IN_FAILURE',
   SIGN_OUT_REQUEST = 'SIGN_OUT_REQUEST'
 }
 
-export default UserActionTypes
+export default AuthActionTypes

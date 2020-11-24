@@ -5,7 +5,7 @@ import {
   Left,
   Center
 } from '../../styles/components/Header'
-import { FaBars, FaBook, FaHome, FaSearch, FaUsers } from 'react-icons/fa'
+import { FaBars, FaHome, FaSearch, FaUsers } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { IStoreState } from '../../redux/store.types'
 import NavItem from './NavItem'

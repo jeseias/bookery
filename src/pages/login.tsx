@@ -12,9 +12,9 @@ import {
   LoadingContainer
 } from '.././styles/pages/Login'
 
-import UserActionTypes from '../redux/auth/auth.enums'
 import { IStoreState } from '../redux/store.types'
 import { useRouter } from 'next/router'
+import AuthActionTypes from '../redux/auth/auth.enums'
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('')
@@ -25,7 +25,7 @@ const LoginPage: React.FC = () => {
 
   function handleLoginInUser() {
     dispatch({
-      type: UserActionTypes.SIGN_IN_REQUEST,
+      type: AuthActionTypes.SIGN_IN_REQUEST,
       payload: { login: username }
     })
   }

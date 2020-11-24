@@ -2,7 +2,7 @@ import { call, takeLatest, put } from 'redux-saga/effects'
 import { ActionType } from 'typesafe-actions'
 import * as AuthActions from './auth.actions'
 import api from '../../services/api'
-import UserActionTypes from './auth.enums'
+import AuthActionTypes from './auth.enums'
 import { IUser } from './auth.types'
 
 export function* signIn({
@@ -22,13 +22,13 @@ export function* signIn({
       twitter_username: data.twitter_username
     }
 
-    yield put({ type: UserActionTypes.SIGN_IN_SUCCESS, payload: { user } })
+    yield put({ type: AuthActionTypes.SIGN_IN_SUCCESS, payload: { user } })
   } catch (error) {}
 }
 
-// export default all([takeLatest(UserActionTypes.SIGN_IN_REQUEST, signIn)])
+// export default all([takeLatest(AuthActionTypes.SIGN_IN_REQUEST, signIn)])
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function* mySaga() {
-  yield takeLatest(UserActionTypes.SIGN_IN_REQUEST, signIn)
+  yield takeLatest(AuthActionTypes.SIGN_IN_REQUEST, signIn)
 }
