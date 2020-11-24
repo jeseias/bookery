@@ -18,7 +18,6 @@ This is aplication design inspiration comes from [Facebook](https://www.facebook
 At the moment thats all. 😔 <br />
 More features coming soon 🤘😎🔥
 
-<br />
 
 # To Be learned
 

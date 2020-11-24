@@ -67,10 +67,22 @@ const Home: NextPage = () => {
         </RecommendBooksContainer>
 
         <AddPostContainer>
-          <img src={user.avatar_url} alt="" />
-          <textarea
-            placeholder={`${user.name || ''}, O que tens em mente?`}
-          ></textarea>
+          {user ? (
+            <>
+              <img src={user.avatar_url} alt="" />
+              <textarea
+                placeholder={`${user.name || ''}, O que tens em mente?`}
+              ></textarea>
+            </>
+          ) : (
+            <>
+              <img src="nom" alt="User imagen " />
+              <textarea
+                placeholder={`${user.name || ''}, O que tens em mente?`}
+              ></textarea>
+            </>
+          )}
+
           <Separetor thin className="separator" bgColor="#242526" />
           <div className="cta">
             <PostActionButton
