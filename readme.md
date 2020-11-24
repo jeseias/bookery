@@ -30,4 +30,7 @@ __Visit the app [here](https://bookery-iota.vercel.app/) to test it__
 - [  ] Testing __React Components__
 - [  ] Top class proper __Authentication__
 
+ # Please help
 
+ If you master any of this __web technologies__ please go ahead and __suggest__ me specific topics to __master__
+send me an email <domingosjeseias@gmail.com>
