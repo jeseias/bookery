@@ -18,6 +18,8 @@ This is aplication design inspiration comes from [Facebook](https://www.facebook
 At the moment thats all. 😔 <br />
 More features coming soon 🤘😎🔥
 
+__Visit the app [here](https://bookery-iota.vercel.app/) to test it__
+
 
 # To Be learned
 
