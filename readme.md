@@ -27,6 +27,7 @@ __Visit the app [here](https://bookery-iota.vercel.app/) to test it__
 - [ x ] NextJS __NextReduxWrapper__ - __Routing__
 - [ x ] __Root-Reducer__ - __Root-Sagas__
 - [ x ] Testing Redux using __Jest__
+- [  ] Redux __Persister__
 - [  ] Testing __React Components__
 - [  ] Top class proper __Authentication__
 
