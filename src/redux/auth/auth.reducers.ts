@@ -1,7 +1,7 @@
 import AuthActionTypes from './auth.enums'
 import { IAuthStateStore, TAuthAction } from './auth.types'
 
-const INITIAL_STATE: IAuthStateStore = {
+export const INITIAL_STATE: IAuthStateStore = {
   login: '',
   error: false,
   isSignIn: false,
@@ -32,8 +32,9 @@ function authReducer(
       return {
         ...state,
         loading: false,
-        isSignIn: true,
-        isHeaderVisible: false
+        isSignIn: false,
+        isHeaderVisible: false,
+        error: true
       }
     case AuthActionTypes.SIGN_OUT_REQUEST:
       return {
