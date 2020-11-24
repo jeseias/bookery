@@ -69,7 +69,7 @@ const Home: NextPage = () => {
         <AddPostContainer>
           <img src={user.avatar_url} alt="" />
           <textarea
-            placeholder={`${user.name}, O que tens em mente?`}
+            placeholder={`${user.name || ''}, O que tens em mente?`}
           ></textarea>
           <Separetor thin className="separator" bgColor="#242526" />
           <div className="cta">
