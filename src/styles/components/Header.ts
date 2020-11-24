@@ -68,6 +68,7 @@ export const Left = styled.div`
 export const InfoBox = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 
   font-size: 2rem;
   font-family: sans-serif;

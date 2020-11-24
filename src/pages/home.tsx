@@ -29,8 +29,12 @@ import { NextPage } from 'next'
 
 import CTAsideItem from '../components/CTAsideItem'
 import PostActionButton from '../components/PostActionButton'
+import { useSelector } from 'react-redux'
+import { IStoreState } from '../redux/store.types'
 
 const Home: NextPage = () => {
+  const { user } = useSelector((state: IStoreState) => state.auth)
+
   return (
     <Container>
       <HomeAsideLeft>
@@ -63,8 +67,10 @@ const Home: NextPage = () => {
         </RecommendBooksContainer>
 
         <AddPostContainer>
-          <img src="" alt="" />
-          <textarea placeholder="Jeseias, O que tens em mente?"></textarea>
+          <img src={user.avatar_url} alt="" />
+          <textarea
+            placeholder={`${user.name}, O que tens em mente?`}
+          ></textarea>
           <Separetor thin className="separator" bgColor="#242526" />
           <div className="cta">
             <PostActionButton

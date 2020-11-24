@@ -38,7 +38,7 @@ const HeaderComponent: React.FC = () => {
         {user ? (
           <>
             <img src={user.avatar_url} />
-            <span>{user.name.split(' ')[0]}</span>
+            <span>{user.name.split(' ')[0] || ''}</span>
           </>
         ) : null}
       </InfoBox>
