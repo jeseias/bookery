@@ -5,11 +5,10 @@ import {
   Left,
   Center
 } from '../../styles/components/Header'
-import { FaBars, FaHome, FaSearch, FaUsers } from 'react-icons/fa'
+import { FaBars, FaSearch } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { IStoreState } from '../../redux/store.types'
 import NavItem from './NavItem'
-import { FiBook } from 'react-icons/fi'
 import { INavItem } from '../../redux/nav/nav.types'
 
 const HeaderComponent: React.FC = () => {
@@ -28,7 +27,7 @@ const HeaderComponent: React.FC = () => {
         </SearchBox>
       </Left>
 
-      <Center length={Object.values(nav).length}>
+      <Center length={Object.values(nav).length} data-testid="center">
         {Object.values(nav).map((item: INavItem) => (
           <NavItem
             key={item.text}
