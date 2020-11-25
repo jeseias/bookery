@@ -8,8 +8,7 @@ afterEach(cleanup)
 
 describe('Header Component Testing', () => {
   it('Renders without crashing', () => {
-    const root = document.createElement('div')
-    // renderUI(<Header />, root)
+    renderUI(<Header />)
   })
 
   it('Center: Nav Container should be present', async () => {
